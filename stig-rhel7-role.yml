@@ -138,6 +138,7 @@
         - CCE-80379-1
         - NIST-800-53-AC-6
         - DISA-STIG-RHEL-07-021120
+      ignore_errors: yes
     
     - name: Ensure owner 0 on /etc/cron.allow
       file:
