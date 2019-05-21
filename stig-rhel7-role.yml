@@ -7611,6 +7611,7 @@
         - NIST-800-53-CM-7
         - NIST-800-53-MP-2
         - DISA-STIG-RHEL-07-021010
+      ignore_errors: yes
     
     - name: get back device previous mount option
       shell: mount | grep ' {{ var_removable_partition }} ' | sed -re 's:.*\((.*)\):\1:'
@@ -7630,7 +7631,8 @@
         - NIST-800-53-CM-7
         - NIST-800-53-MP-2
         - DISA-STIG-RHEL-07-021010
-    
+      ignore_errors: yes
+
     - name: get back device fstype
       shell: mount | grep ' {{ var_removable_partition }} ' | cut -d ' ' -f 5
       register: device_fstype
@@ -7649,6 +7651,7 @@
         - NIST-800-53-CM-7
         - NIST-800-53-MP-2
         - DISA-STIG-RHEL-07-021010
+      ignore_errors: yes
     
     - name: Ensure permission nosuid are set on var_removable_partition
       mount:
@@ -7671,6 +7674,7 @@
         - NIST-800-53-CM-7
         - NIST-800-53-MP-2
         - DISA-STIG-RHEL-07-021010
+      ignore_errors: yes
     
     - name: Ensure sysctl kernel.randomize_va_space is set to 2
       sysctl:
