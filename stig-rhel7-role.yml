@@ -7532,6 +7532,8 @@
         - NIST-800-53-CM-7
         - NIST-800-53-MP-2
         - DISA-STIG-RHEL-07-021000
+      ignore_errors: yes
+
     
     - name: get back device previous mount option
       shell: mount | grep ' /home ' | sed -re 's:.*\((.*)\):\1:'
@@ -7547,6 +7549,7 @@
         - NIST-800-53-CM-7
         - NIST-800-53-MP-2
         - DISA-STIG-RHEL-07-021000
+      ignore_errors: yes
     
     - name: get back device fstype
       shell: mount | grep ' /home ' | cut -d ' ' -f 5
@@ -7562,7 +7565,8 @@
         - NIST-800-53-CM-7
         - NIST-800-53-MP-2
         - DISA-STIG-RHEL-07-021000
-    
+      ignore_errors: yes
+
     - name: Ensure permission nosuid are set on /home
       mount:
         path: "/home"
@@ -7580,6 +7584,7 @@
         - NIST-800-53-CM-7
         - NIST-800-53-MP-2
         - DISA-STIG-RHEL-07-021000
+      ignore_errors: yes
     
     - name: XCCDF Value var_removable_partition # promote to variable
       set_fact:
