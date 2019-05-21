@@ -155,6 +155,8 @@
         - CCE-80378-3
         - NIST-800-53-AC-6
         - DISA-STIG-RHEL-07-021110
+      ignore_errors: yes
+
     
     - name: Ensure xorg-x11-server-common is removed
       package:
